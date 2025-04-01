@@ -1,15 +1,17 @@
 
-import { fetchMeals } from "@/app/api/fetchMeal";
 import { Header } from "@/app/components/header";
 import MealsList from "@/app/components/mealsList";
 
+
 export async function generateStaticParams() {
-  const meals = await fetchMeals(); 
-  return meals.map((meal: { idMeal: string }) => ({ id: meal.idMeal })); 
+  const response = await fetch("http://localhost:3000/api/meals"); 
+  const meals = await response.json();
+  return meals.map((meal: { idMeal: string }) => ({ id: meal.idMeal }));
 }
 
 export default async function Home() {
-  const meals = await fetchMeals();
+  const response = await fetch("http://localhost:3000/api/meals");
+  const meals = await response.json();
 
   return (
     <main className="bg-grey-500">

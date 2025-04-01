@@ -1,21 +1,25 @@
+"use client"
 
-import { fetchMealById, fetchMeals } from '@/app/api/fetchMeal';
+import { fetchMealById } from '@/app/api/fetchMeal';
+import type { Meal } from '@/app/types/type';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-// Generate Static Paths for Meal Pages
-export async function generateStaticParams() {
-  const meals = await fetchMeals();
-  return meals.map((meal: { idMeal: string }) => ({ id: meal.idMeal }));
-}
 
-const MealDetailPage = async ({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) => {
-  const { id } = await params;
-
-  const meal = await fetchMealById(id);
+const MealDetailPage =  () => {
+    const { id } = useParams();
+    const [meal, setMeal] = useState<Meal | null>(null);
+    
+    useEffect(() => {
+        const fetchMeal = async () => {
+          const res = await fetchMealById(Array.isArray(id) ? id[0] : id || "");
+          const data = await res.json();
+          setMeal(data.meals[0]);
+        };
+    
+        fetchMeal();
+      }, [id]);
 
   if (!meal) {
     return <p className="text-center mt-10">Meal not found.</p>;
