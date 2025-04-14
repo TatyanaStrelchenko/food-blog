@@ -1,0 +1,12 @@
+{
+    "Footer": {
+      "footer": "Food blog!"
+    },
+    "Home": {
+       "meal-list": "Meal List"
+    },
+    "NotFound": {
+        "not-found": "Meal not found."
+     }
+  }
+  

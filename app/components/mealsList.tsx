@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,10 +14,11 @@ interface MealsListProps {
 }
 
 const MealsList = ({ meals }: MealsListProps) => {
+      const t = useTranslations('Home')
   
   return (
     <div className="main">
-      <h2 className="text-2xl font-bold text-center">Meal List</h2>
+      <h2 className="text-2xl font-bold text-center">{t("meal-list")}</h2>
 
       {meals.length === 0  ? (
       <p className="text-center mt-4">Loading...</p>
