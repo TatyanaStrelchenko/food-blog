@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,15 +13,15 @@ interface MealsListProps {
   meals: Meal[];
 }
 
-const MealsList = ({ meals }: MealsListProps) => {
-      const t = useTranslations('Home')
+const MealsList = async ({ meals }: MealsListProps) => {
+      const t = await getTranslations('Home')
   
   return (
     <div className="main">
       <h2 className="text-2xl font-bold text-center">{t("meal-list")}</h2>
 
       {meals.length === 0  ? (
-      <p className="text-center mt-4">Loading...</p>
+      <p className="text-center mt-4">Loading!!!!!!!...</p>
       ) : ( 
           <div className="grid grid-cols-4 gap-10 mt-4">
               {meals?.map((meal) => (

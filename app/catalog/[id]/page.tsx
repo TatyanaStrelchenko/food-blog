@@ -6,7 +6,7 @@ import Link from 'next/link';
 // Generate Static Paths for Meal Pages
 export async function generateStaticParams() {
   const meals = await fetchMeals();
-  return meals.map((meal: { idMeal: string }) => ({ id: meal.idMeal }));
+  return meals?.map((meal: { idMeal: string }) => ({ id: meal.idMeal }));
 }
 
 const MealDetailPage = async ({
