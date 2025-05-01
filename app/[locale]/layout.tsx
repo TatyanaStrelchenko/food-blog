@@ -25,18 +25,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 }) {
-  // const { locale = 'en'} = props.params;
-
-  // // if (!locales.includes(locale as any)) notFound();
-
-  // // const messages = (await import(`../../messages/${locale}.json`)).default;
-
-  // let messages;
-  // try {
-  //   messages = (await import(`../../messages/${locale}.json`)).default;
-  // } catch (error) {
-  //   notFound(); // Fallback if locale not found
-  // }
 
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
