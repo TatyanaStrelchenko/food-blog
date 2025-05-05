@@ -8,8 +8,9 @@ import MealsList from "@/app/components/mealsList";
 //   return meals?.map((meal: { idMeal: string }) => ({ id: meal.idMeal }));
 // }
 
-export default async function Home() {
 
+
+export default async function Home() {
   const response = await fetch("http://localhost:3000/api/meals");
   const meals = await response.json();
 

@@ -4,9 +4,8 @@ export default function NotFoundPage() {
   const t = useTranslations('NotFoundPage');
 
   return (
-    <div title={t('title')}>
-      <p className="max-w-[460px]">{t('description')}</p>
-      Notttt
-    </div>
+    <div>
+      <p className="max-w-[460px]">  {t('not-found')}</p>
+      </div>
   );
 }

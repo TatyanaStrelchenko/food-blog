@@ -1,6 +1,6 @@
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 
 export interface Meal {
   idMeal: string;
@@ -14,8 +14,8 @@ interface MealsListProps {
 }
 
 const MealsList = async ({ meals }: MealsListProps) => {
-      const t = await getTranslations('Home')
-  
+  const t = await getTranslations('Home')
+
   return (
     <div className="main">
       <h2 className="text-2xl font-bold text-center">{t("meal-list")}</h2>
@@ -25,7 +25,7 @@ const MealsList = async ({ meals }: MealsListProps) => {
       ) : ( 
           <div className="grid grid-cols-4 gap-10 mt-4">
               {meals?.map((meal) => (
-                  <Link href={`/catalog/${meal.idMeal}`} key={meal.idMeal}>
+                    <Link href={`/catalog/${meal.idMeal}`} key={meal.idMeal}>
                     <div className="relative pt-40">
                         <Image
                             src={meal.strMealThumb}

@@ -5,7 +5,7 @@
     "Home": {
        "meal-list": "Meal List"
     },
-    "NotFound": {
+    "NotFoundPage": {
         "not-found": "Meal not found."
      },
      "LocaleSwitcher": {
