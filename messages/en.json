@@ -1,0 +1,16 @@
+{
+    "Footer": {
+      "footer": "Food blog!"
+    },
+    "Home": {
+       "meal-list": "Meal List"
+    },
+    "NotFoundPage": {
+        "not-found": "Meal not found."
+     },
+     "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, uk { 🇺🇦Ukranian} en {🇺🇸 English} other {Unknown}}"
+    }
+  }
+  

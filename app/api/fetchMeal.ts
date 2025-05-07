@@ -14,7 +14,7 @@ export const fetchMeals = async () => {
     return data.meals || [];
   } catch (error) {
     console.error("Error fetching meals list:", error);
-    return [];
+    throw Error();
   }
 };
 
@@ -24,7 +24,7 @@ export const fetchMealById = async (id: string) => {
     const res = await fetch(`${API_BASE_URL}/lookup.php?i=${id}`, {
       next: { revalidate: 3600 }, // ✅ ISR (auto-refresh data)
     });
-
+    //setTimeout(())
     if (!res.ok) throw new Error(`Error fetching meal ${id}`);
 
     const data = await res.json();

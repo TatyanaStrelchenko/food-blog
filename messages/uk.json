@@ -1,0 +1,16 @@
+{
+    "Footer": {
+      "footer": "Український фуд-блог"
+    },
+    "Home": {
+        "meal-list": "Список блюд"
+     },
+     "NotFoundPage": {
+        "not-found": "Блюдо не знайдено"
+     },
+     "LocaleSwitcher": {
+      "label": "Вибрати мову",
+      "locale": "{locale, select, uk {🇺🇦Ukranian} en {🇺🇸 English} other {Unbekannt}}"
+    }
+  }
+  
