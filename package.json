@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
+    "@types/next-auth": "^3.13.0",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "next": "15.1.7",
+    "next-auth": "^4.24.11",
     "next-intl": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
