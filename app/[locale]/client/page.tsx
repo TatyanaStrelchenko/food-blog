@@ -2,6 +2,7 @@
 
 import { fetchMealById } from '@/app/api/fetchMeal';
 import type { Meal } from '@/app/types/type';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -31,7 +32,13 @@ const MealDetailPage =  () => {
     <div className="grid grid-cols-2 gap-4 p-2 rounded-lg shadow-lg">
       <div>
         <h1 className="text-lg font-semibold uppercase">{meal.strMeal}</h1>
-        <img className="h-25" src={meal.strMealThumb} alt={meal.strMeal} />
+          <Image
+            src={meal.strMealThumb}
+            alt={meal.strMeal}
+            className="rounded-full absolute top-0 left-0 p-4"
+            width={250}
+            height={250}
+        />      
       </div>
       <div>
       <h2>Instructions</h2>

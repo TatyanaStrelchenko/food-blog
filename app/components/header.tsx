@@ -1,4 +1,7 @@
+"use client"
+
 import LocaleSwitcher from "@/app/components/LocaleSwitcher"
+import { signOut } from "next-auth/react";
 import Image from "next/image"
 
 export const Header = () => {
@@ -15,8 +18,17 @@ export const Header = () => {
                         />
                     </div>
                     <div className="grid grid-cols-2 justify-end">
-                    <LocaleSwitcher />
-
+                        <LocaleSwitcher />
+                        <button
+                            onClick={() =>
+                                signOut({
+                                callbackUrl: "/", // You can change this to another redirect URL
+                                })
+                            }
+                            className="text-sm px-4 py-2 bg-red-500 text-white rounded"
+                            >
+                            Logout
+                        </button>
                     </div>
                 </div>
             </div>
